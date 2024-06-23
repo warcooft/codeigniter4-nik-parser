@@ -3,7 +3,7 @@ Parse indonesian identity number to the array.
 
 ## Installation
 
-	composer require aselsan/codeigniter4-nik-parser
+	composer require aselsan/codeigniter4-nik-parser dev-dev
 
  ## Usage
 
