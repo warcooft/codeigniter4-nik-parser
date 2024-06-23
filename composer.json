@@ -1,0 +1,54 @@
+{
+  "name": "aselsan/codeigniter4-nik-parser",
+  "description": "Parse Nomor Induk Kependudukan (NIK / KTP) untuk framework CodeIgniter 4",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "aselsan",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.0"
+  },
+  "require-dev": {
+    "codeigniter4/framework": "^4.4",
+    "rector/rector": "dev-main"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Aselsan\\Codeigniter4NikParser\\": "src/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "phpstan/extension-installer": true
+    }
+  },
+  "scripts": {
+    "analyze": [
+      "phpstan analyze",
+      "psalm",
+      "rector process --dry-run"
+    ],
+    "sa": "@analyze",
+    "ci": [
+      "Composer\\Config::disableProcessTimeout",
+      "@cs",
+      "@deduplicate",
+      "@inspect",
+      "@analyze",
+      "@test"
+    ],
+    "cs": "php-cs-fixer fix --ansi --verbose --dry-run --diff",
+    "cs-fix": "php-cs-fixer fix --ansi --verbose --diff",
+    "style": "@cs-fix",
+    "deduplicate": "phpcpd app/ src/",
+    "inspect": "deptrac analyze --cache-file=build/deptrac.cache",
+    "mutate": "infection --threads=2 --skip-initial-tests --coverage=build/phpunit",
+    "test": "phpunit"
+  }
+}
