@@ -1,5 +1,6 @@
 # Parse Nomor Induk Kependudukan (NIK / KTP) untuk framework CodeIgniter 4
 Parse indonesian identity number to the array.
+This repo is still being developed so there are still lots of bugs.
 
 ## Installation
 
